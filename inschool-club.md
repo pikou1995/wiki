@@ -1,8 +1,13 @@
-host:
-    http://192.168.2.130:8082
-headers:
-    X-User-Id
-    X-School-Id
+host:  
+    http://192.168.2.130:8082  
+
+headers:  
+    X-User-Id  
+    X-School-Id  
+
+headers:  
+    X-User-Id  
+    X-School-Id  
 
 
 # 1. 获取社团列表
