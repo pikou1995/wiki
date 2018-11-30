@@ -5,10 +5,6 @@ headers:
     X-User-Id  
     X-School-Id  
 
-headers:  
-    X-User-Id  
-    X-School-Id  
-
 
 # 1. 获取社团列表
 简要描述:
