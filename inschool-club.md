@@ -143,7 +143,7 @@ headers:
 |  参数名 | 必填  |  类型  |  默认值 |  说明   |
 | ------ | ---- | ------ | ------ | ------ |
 | event_id | 是  | int   |        | 事件id  |
-| action |  是   | string |       | 'accepted' => 通过, 'rejected' => 不通过 |
+| action |  是   | string |       | 'accept' => 通过, 'reject' => 不通过 |
 | msg    |  否   | string |       | 备注信息 |
 
 返回数据类型:
