@@ -1,31 +1,38 @@
-host:  
-    http://192.168.2.130:8082  
+host:
 
-headers:  
-    X-User-Id  
-    X-School-Id  
+    http://192.168.2.130:8082
+
+headers:
+
+    X-User-Id
+
+    X-School-Id
 
 
 # 1. 获取社团列表
+
 简要描述:
+
     获取学校内所有的社团
 
 请求URL:
-    /clubs/
+
+    /admin/clubs/
 
 请求方式:
+
     GET
 
 参数：
 
 | 参数名  |  必填  |  类型   |  默认值 |  说明  |
 | ------ | ------ | ------ | ------ | ------ |
-| group  |  是    | string |         | 请填 'admin' |
 | status |  否    | int    |         | 社团的状态: -1 => 已拒绝, 0 => 待审核, 1 => 审核通过, 2 => 申请解散, 3 => 已解散 .不填则默认查询全部 |
 | page   |  否    | int    | 1       | 第几页 |
 | per_page | 否   | int    | 10      | 每页多少个社团 |
 
 返回数据类型:
+
     json
 
 返回数据:
@@ -38,6 +45,7 @@ headers:
 |  items  | array | 社团列表 |
 
 备注:
+
     一个社团数据示例(字段都有, 顺序不一定):
 ```js
 {
@@ -58,13 +66,17 @@ headers:
 ```
 
 # 2. 获取成员列表
+
 简要描述:
+
     获取社团里面的所有成员
 
 请求URL:
+
     /members/
 
 请求方式:
+
     GET
 
 参数：
@@ -74,13 +86,17 @@ headers:
 | club_id |  是   |  int  |         | 社团id |
 
 返回数据类型:
+
     json
 
 返回数据:
+
     [...members]
 
 备注:
+
     一个成员member数据示例(字段都有, 顺序不一定):
+
 ```js
 {
     "id": 45, // 上面提到的内部 id
@@ -93,13 +109,17 @@ headers:
 
 
 # 3. 获取申请详情
+
 简要描述:
+
     查询社团申请的事件, 可以获取申请的信息
 
 请求URL:
-    /clubs/{club_id}/events/
+
+    /admin/clubs/{club_id}/events/
 
 请求方式:
+
     GET
 
 参数：
@@ -109,10 +129,13 @@ headers:
 |  type  |  否  |  int  |        | type 同 status, 0 => 申请创建, 2 => 申请解散. 不填则默认获取最近的一个请求事件. |
 
 返回数据:
+
     [...events]
 
 备注:
+
     一个事件数据示例(字段都有, 顺序不一定):
+
 ```js
 {
     "id": 45, // 上面提到的内部 id
@@ -129,13 +152,17 @@ headers:
 ```
 
 # 4. 审核社团
+
 简要描述:
+
     审核创建社团
 
 请求URL:
-    /clubs/{club_id}/check/
+
+    /admin/clubs/{club_id}/check/
 
 请求方式:
+
     POST
 
 参数：
@@ -143,14 +170,13 @@ headers:
 |  参数名 | 必填  |  类型  |  默认值 |  说明   |
 | ------ | ---- | ------ | ------ | ------ |
 | event_id | 是  | int   |        | 事件id  |
-| action |  是   | string |       | 'accept' => 通过, 'reject' => 不通过 |
+| action |  是   | string |       | 'accepted' => 通过, 'rejected' => 不通过 |
 | msg    |  否   | string |       | 备注信息 |
 
-返回数据类型:
-    无
-
 返回数据:
+
     无
 
 备注:
+
     状态码 204 表示成功
