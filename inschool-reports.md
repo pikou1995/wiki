@@ -64,6 +64,32 @@ headers:
     "created_at" : "Thu, 29 Nov 2018 08:40:17 GMT"
 }
 ```
+    一个活动示例:
+```js
+{
+    "_id" : 7,
+    "type" : 5,
+    "content" : "<p>圣诞节party</p>",
+    "imgs" : null,
+    "payload" : {
+        "title" : "圣诞节party",
+        "content" : "圣诞节party圣诞节party圣诞节party圣诞节party圣诞节party圣诞节party",
+        "time" : "2018.12.25",
+        "place" : "梦想小镇2号楼",
+        "limit" : "111",
+        "contact" : "111111111111",
+        "img" : "//inschool-oss.incourse.com.cn/FgvR8rNH0OR2gnMGcgXU4UBmVXfC.jpg"
+    },
+    "forward_num" : 0,
+    "comment_num" : 0,
+    "like_num" : 0,
+    "members" : [],
+    "user_id" : 5234,
+    "school_id" : 63,
+    "created_at" : ISODate("2018-12-17T09:30:44.978Z"),
+    "deleted_at" : ISODate("2018-12-21T06:50:02.744Z")
+}
+```
 
 # 2. 获取举报的列表
 
@@ -132,7 +158,7 @@ headers:
 | 参数名  |  必填  |  类型   |  默认值 |  说明  |
 | ------ | ------ | ------ | ------ | ------ |
 | blog_id |  是   | int    | 1      | 微博的id |
-| action |  是    | string |        | 'accept' => 会删除此微博, 'reject' => 微博不作处理  |
+| action |  是    | string |        | 'delete' => 会删除此微博, 'ignore' => 微博不作处理  |
 
 返回数据:
 
